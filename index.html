@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+    <form class="form">
+        <div class="form_header">
+            <h2>Регистрация</h2> 
+        </div>
+        <hr>
+        <div class="form_body">
+            <div class="form_picture">
+                <img src = "отель.png">
+            </div>
+            <div class="form_col">
+                <div class="form_group1">
+                    <label for="first-name">Логин</label><br />
+                    <input type="text" name="first-name" id="first-name" class="form_control"><br />
+                    <label for="password">Пароль</label><br />
+                    <input type="password" name="password" id="password" class="form_control"><br />
+                    <label for="range">Выберите возраст</label><br />
+                    <input type="range" id="range" min="0" max="100" step="1" value="0" class="form_control"><br />
+                    <span id="age">0</span> лет
+                    <script>
+                        var range = document.getElementById('range');
+                        var age = document.getElementById('age');
+                        range.addEventListener('input', function() {
+                            age.textContent = range.value;
+                        });
+                    </script>
+                </div>
+                <div class="form_group2">
+                    <label for="email">Почта</label><br />
+                    <input type="email" id="email" placeholder="college@mail.ru" class="form_control">
+                    <input type="radio" id="form_man" name="form_choose" value="man">
+                    <label for="form_man">Мужчина</label>
+                    <input type="radio" id="form_woman" name="form_choose" value="woman">
+                    <label for="form_woman">Женщина</label><br />
+                    <label for="form_file">Прикрепите документ удостоверяющий вашу личность</label><br />
+                    <input type="file" id="form_file">
+                    <br>
+                    <label for="form_select">Выберите национальностб</label><br>
+                    <select id="form_select" class="form_control">
+                        <option value="option1">Русский</option>
+                        <option value="option2">Немец</option>
+                        <option value="option3">Американец</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Отправить" class="form_control">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
